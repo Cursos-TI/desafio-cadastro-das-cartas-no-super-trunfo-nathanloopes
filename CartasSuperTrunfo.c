@@ -1,277 +1,171 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <time.h>
 
 int main()
 {
-      int Pturisticos, cd_cidade, populacao, valora, valorb, valorpt, valord, valorpc, valorsp, opcao, comparacao1, comparacao2;
-      float altura, area, pib, dencidade, valorpib, vldenpib, spoder, spoder2, valorp, testep, somatotal;
-      char estado[3], cidade[70];
+      int populacao, Pturisticos, comparacao1, comparacao2, comparacao3, comparacao4;
+      char cidade[70], estado[70];
+      float pib, dencidade, vlpib;
+      int vl1, vl2, vl3, vl4, vl5, vl6;
 
-      int Pturisticos2, cd_cidade2, populacao2;
-      float altura2, area2, pib2, dencidade2, vlpib;
-      char estado2[3], cidade2[70];
+      int populacao2, Pturisticos2;
+      char cidade2[70], estado2[70];
+      float pib2, dencidade2, vlpib2;
+      int vl7, vl8, vl9, vl10, vl11, vl12;
 
-      float vl1, vl2, vl3, vl4, vl5, vl6, vl7, vl8, vl9, vl10, vl11, vl12, vl13, vl14, vl15, vl16, vl17, vl18, vl19, vl20, vl21, Vl22, vl23, vl24, vl25,
-          vl26, vl27, vl28, vl29, vl30;
+      int ValorTotalC1 = 0, ValorTotalC2 = 0;
+      int spoder, spoder2;
 
-      // ********** MENU PRINCIPAL ********** //
+      // Leitura da primeira carta
+      printf("Digite o nome da cidade:\n");
+      scanf(" %[^\n]", cidade);
 
-      printf("Menu principal\n ");
-      printf("1 - Inicial Jogo\n ");
-      printf("2 - Ver regras\n ");
-      printf("3 - Sair do jogo\n ");
-      printf("escolha uma opcção:");
-      scanf("%d", &opcao);
+      printf("Digite o estado:\n");
+      scanf(" %[^\n]", estado);
 
-      // ********** DINAMICA DO JOGO ********** //
+      printf("Digite a população:\n");
+      scanf("%d", &populacao);
 
-      switch (opcao)
-      {
-      case 1:
-            printf("Numero da carta: 1\n");
+      printf("Digite o PIB:\n");
+      scanf("%f", &pib);
 
-            printf("Digite o estado de origem: ");
-            scanf("%s", estado);
+      printf("Digite os pontos turísticos:\n");
+      scanf("%d", &Pturisticos);
 
-            printf("Cidade: ");
-            scanf("%s", cidade);
+      printf("Digite a densidade demográfica:\n");
+      scanf("%f", &dencidade);
 
-            printf("Codigo da cidade: ");
-            scanf("%d", &cd_cidade);
+      printf("Digite o PIB per capita:\n");
+      scanf("%f", &vlpib);
 
-            printf("quantidade de pontos turisticos:");
-            scanf("%d", &Pturisticos);
+      printf("Digite o superpoder:\n");
+      scanf("%d", &spoder);
 
-            printf("Numero de habitantes: ");
-            scanf("%d", &populacao);
+      // Leitura da segunda carta
+      printf("Digite o nome da segunda cidade:\n");
+      scanf(" %[^\n]", cidade2);
 
-            printf("Area Km²: ");
-            scanf("%f", &area);
+      printf("Digite o estado:\n");
+      scanf(" %[^\n]", estado2);
 
-            printf("Pib da cidade: ");
-            scanf("%f", &pib);
+      printf("Digite a população:\n");
+      scanf("%d", &populacao2);
 
-            ("Estado: %s\n", estado);
-            ("Cidade: %s\n", cidade);
+      printf("Digite o PIB:\n");
+      scanf("%f", &pib2);
 
-            printf("Codigo da cidade: %d\n", cd_cidade);
-            ("pontos turisticos: %d\n", Pturisticos);
-            ("Populacao da cidade: %d\n", populacao);
+      printf("Digite os pontos turísticos:\n");
+      scanf("%d", &Pturisticos2);
 
-            printf("Area km²: %.3f\n", area);
-            printf("Valor do PIB: %.3f bilhões de reais\n", pib);
+      printf("Digite a densidade demográfica:\n");
+      scanf("%f", &dencidade2);
 
-            dencidade = populacao / area;
-            valorpib = pib / populacao;
-            vldenpib = dencidade + valorpib;
-            spoder = populacao + area + pib + Pturisticos + valorpib + (1 / dencidade);
+      printf("Digite o PIB per capita:\n");
+      scanf("%f", &vlpib2);
 
-            printf("dencidade Populacional Carta 1: %.2f habitantes/km²\n", dencidade);
-            printf("PIB per Capita: %.2f\n", valorpib);
-            printf("Valor total do Super Poder: %.2f \n", spoder);
+      printf("Digite o superpoder:\n");
+      scanf("%d", &spoder2);
 
-            //     ********************  CARTA 2   ********************   ///
+      // Impressão das cartas
+      printf("\nCarta 1:\n");
+      printf("Cidade: %s\n", cidade);
+      printf("Estado: %s\n", estado);
+      printf("População: %d\n", populacao);
+      printf("PIB: %.2f\n", pib);
+      printf("Pontos Turísticos: %d\n", Pturisticos);
+      printf("Densidade Demográfica: %.2f\n", dencidade);
+      printf("PIB per Capita: %.2f\n", vlpib);
+      printf("Superpoder: %d\n", spoder);
 
-            printf("Numero da carta: 2\n");
+      printf("\nCarta 2:\n");
+      printf("Cidade: %s\n", cidade2);
+      printf("Estado: %s\n", estado2);
+      printf("População: %d\n", populacao2);
+      printf("PIB: %.2f\n", pib2);
+      printf("Pontos Turísticos: %d\n", Pturisticos2);
+      printf("Densidade Demográfica: %.2f\n", dencidade2);
+      printf("PIB per Capita: %.2f\n", vlpib2);
+      printf("Superpoder: %d\n", spoder2);
 
-            printf("Digite o estado de origem: ");
-            scanf("%s", estado2);
-
-            printf("Cidade: ");
-            scanf("%s", cidade2);
-
-            printf("Codigo da cidade: ");
-            scanf("%d", &cd_cidade2);
-
-            printf("quantidade de pontos turisticos:");
-            scanf("%d", &Pturisticos2);
-
-            printf("Numero de habitantes: ");
-            scanf("%d", &populacao2);
-
-            printf("Area Km²: ");
-            scanf("%f", &area2);
-
-            printf("Pib da cidade: ");
-            scanf("%f", &pib2);
-
-            ("Estado: %s\n", estado2);
-            ("Cidade: %s\n", cidade2);
-
-            printf("Codigo da cidade: %d\n", cd_cidade2);
-            ("pontos turisticos: %d\n", Pturisticos2);
-            ("Populacao da cidade: %d\n", populacao2);
-
-            printf("Area km²: %.3f\n", area2);
-            printf("Valor do PIB: %.3f bilhões de reais\n", pib2);
-
-            dencidade2 = populacao2 / area2;
-            vlpib = pib2 / populacao2;
-            spoder2 = populacao2 + area2 + pib2 + Pturisticos2 + vlpib + (1 / dencidade2);
-            printf("dencidade Populacional Carta 1: %.2f habitantes/km²\n");
-            printf("PIB per Capita: %.2f\n", vlpib);
-            printf("Valor total do Super Poder Carta 2: %.2f \n", spoder2);
-
-            break;
-
-      case 2:
-            printf("regas do jogo\n");
-            break;
-
-      case 3:
-            ("sair");
-            break;
-
-      default:
-            printf("Opção invalida");
-      }
-
-      // **********  COMPARAÇÕES DAS CARTAS ********** //
-
-      printf("escolha o primeiro atributo para disputa de cartas:\n");
-      printf("escolha 1: Populacao\n");
-      printf("escolha 2: PIB\n");
-      printf("escolha 3: Pontos turisticos\n");
-      printf("escolha 4: Dencidade Poulacional n");
-      printf("escolha 5: Valor do PIB per Capita\n");
-      printf("escolha 6: Total Super poder\n");
-      printf("Comparações escolhidas:");
+      // Comparação 1
+      printf("\nEscolha um atributo para comparar:\n");
+      printf("1. População\n2. PIB\n3. Pontos turísticos\n4. Densidade demográfica\n5. PIB per capita\n6. Superpoder\n");
       scanf("%d", &comparacao1);
 
       switch (comparacao1)
       {
-
       case 1:
-            printf("Primeira atribuição escolhida: População\no valor da carta é:"
-                   "%d\n",
-                   populacao);
-
+            printf("Carta 1: %d | Carta 2: %d\n", populacao, populacao2);
             break;
-
       case 2:
-            printf("Segunda atribuição escolhida: PIB\no valor da carta é:"
-                   "%d\n",
-                   pib);
-
+            printf("Carta 1: %.2f | Carta 2: %.2f\n", pib, pib2);
             break;
-
       case 3:
-            printf("Terceira atribuição escolhida: Pontos Turisticos\no valor da carta é:"
-                   "%d\n",
-                   Pturisticos);
+            printf("Carta 1: %d | Carta 2: %d\n", Pturisticos, Pturisticos2);
             break;
-
       case 4:
-            printf("Quarta atribuição escolhida: Descidade Populacional\no valor da carta é:"
-                   "%d\n",
-                   dencidade);
+            printf("Carta 1: %.2f | Carta 2: %.2f\n", dencidade, dencidade2);
             break;
-
       case 5:
-            printf("Quinta atribuição escolhida: Valor PIB per Capita\no valor da carta é:"
-                   "%d\n",
-                   vlpib);
+            printf("Carta 1: %.2f | Carta 2: %.2f\n", vlpib, vlpib2);
             break;
-
       case 6:
-            printf("Sexta atribuição escolhida: Super Poder\no valor da carta é:"
-                   "%d\n",
-                   spoder);
+            printf("Carta 1: %d | Carta 2: %d\n", spoder, spoder2);
             break;
-
       default:
-            ("Opção invalida.");
+            printf("Opção inválida.\n");
+            break;
       }
-      printf("o segundo a atributo para disputa de cartas:\n");
-      printf("escolha 1: Populacao\n");
-      printf("escolha 2: PIB\n");
-      printf("escolha 3: Pontos turisticos\n");
-      printf("escolha 4: Dencidade Poulacional n");
-      printf("escolha 5: Valor do PIB per Capita\n");
-      printf("escolha 6: Total Super poder\n");
-      printf("Comparações escolhidas:");
+
+      // Comparação 2
+      printf("\nEscolha outro atributo para comparar:\n");
+      printf("1. População\n2. PIB\n3. Pontos turísticos\n4. Densidade demográfica\n5. PIB per capita\n6. Superpoder\n");
       scanf("%d", &comparacao2);
 
       switch (comparacao2)
       {
-
       case 1:
-            printf("Primeira atribuição escolhida: População\no valor da carta é"
-                   "%d\n",
-                   populacao);
-
+            printf("Carta 1: %d | Carta 2: %d\n", populacao, populacao2);
             break;
-
       case 2:
-            printf("Segunda atribuição escolhida: PIB\no valor da carta é:"
-                   "%d\n",
-                   pib);
-
+            printf("Carta 1: %.2f | Carta 2: %.2f\n", pib, pib2);
             break;
-
       case 3:
-            printf("Terceira atribuição escolhida: Pontos Turisticos\no valor da carta é:"
-                   "%d\n",
-                   Pturisticos);
+            printf("Carta 1: %d | Carta 2: %d\n", Pturisticos, Pturisticos2);
             break;
-
       case 4:
-            printf("Quarta atribuição escolhida: Descidade Populacional\no valor da carta é:"
-                   "%d\n",
-                   dencidade);
+            printf("Carta 1: %.2f | Carta 2: %.2f\n", dencidade, dencidade2);
             break;
-
       case 5:
-            printf("Quinta atribuição escolhida: Valor PIB per Capita\no valor da carta é:"
-                   "%d\n",
-                   vlpib);
+            printf("Carta 1: %.2f | Carta 2: %.2f\n", vlpib, vlpib2);
             break;
-
       case 6:
-            printf("Sexta atribuição escolhida: Super Poder\no valor da carta é:"
-                   "%d\n",
-                   spoder);
+            printf("Carta 1: %d | Carta 2: %d\n", spoder, spoder2);
             break;
-
       default:
-            ("Opção invalida.");
+            printf("Opção inválida.\n");
+            break;
       }
 
-      vl1 = populacao + pib;
-      vl2 = populacao + pib;
-      vl3 = populacao + pib;
-      vl4 = populacao + pib;
-      vl5 = populacao + pib;
+      // Comparação final de valor total
+      ValorTotalC1 = populacao + (int)pib + Pturisticos + (int)dencidade + (int)vlpib + spoder;
+      ValorTotalC2 = populacao2 + (int)pib2 + Pturisticos2 + (int)dencidade2 + (int)vlpib2 + spoder2;
 
-      vl6 = populacao + pib;
-      vl7 = populacao + pib;
-      vl8 = populacao + pib;
-      vl9 = populacao + pib;
-      vl10 = populacao + pib;
+      printf("\nValor total da carta 1: %d\n", ValorTotalC1);
+      printf("Valor total da carta 2: %d\n", ValorTotalC2);
 
-      vl11 = populacao + pib;
-      vl12 = populacao + pib;
-      vl13 = populacao + pib;
-      vl14 = populacao + pib;
-      vl15 = populacao + pib;
+      if (ValorTotalC1 > ValorTotalC2)
+      {
+            printf("Carta 1 venceu!\n");
+      }
+      else if (ValorTotalC2 > ValorTotalC1)
+      {
+            printf("Carta 2 venceu!\n");
+      }
+      else
+      {
+            printf("Empate!\n");
+      }
 
-      vl16 = populacao + pib;
-      vl17 = populacao + pib;
-      vl18 = populacao + pib;
-      vl19 = populacao + pib;
-      vl20 = populacao + pib;
-      vl21 = populacao + pib;
-      Vl22 = populacao + pib;
-      vl23 = populacao + pib;
-      vl24 = populacao + pib;
-      vl25 = populacao + pib;
-
-      vl26 = populacao + pib;
-      vl27 = populacao + pib;
-      vl28 = populacao + pib;
-      vl29 = populacao + pib;
-      vl30 = populacao + pib;
-
-      printf("soma total dos atributos escolhidos: %f", vl1);
+      return 0;
 }
